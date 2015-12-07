@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../libs/angular.min.js"></script>
+    <link rel="stylesheet" href="../libs/bootstrap.min.css">
+</head>
+<body ng-app="myApp">
+<div class="col-md-3"></div>
+<div class="col-md-4" ng-controller="MainController">
+    <img ng-src="{{ backgroundImg }}" usemap="#img">
+    <map name="img">
+        <div ng-if = 'isMain()'>
+            <area shape="rect" coords="68,198,208,327" ng-click="report()">
+            <area shape="rect" coords="249,206,380,304" ng-click="readNews()">
+            <area shape="rect" coords="75,363,218,528" ng-click="map()">
+            <area shape="rect" coords="261,358,388,530" ng-click="cp()">
+            <area shape="rect" coords="70,562,207,736" ng-click="followMe()">
+            <area shape="rect" coords="261,566,386,736" ng-click="settings()">
+        </div>
+
+        <div ng-if = 'isReport()'>
+            <area shape="rect" coords="50,154,99,210" ng-click="backToMain()">
+            <area shape="rect" coords="177,699,260,732" ng-click="backToMain()">
+            <area shape="rect" coords="36,268,400,308" ng-click="crimeType()">
+        </div>
+
+        <div ng-if = 'isCrimeType()'>
+            <area shape="rect" coords="45,156,86,190" ng-click="backToMain()">
+            <area shape="rect" coords="360,150,400,186" ng-click="backToMain()">
+            <area shape="rect" coords="178,666,240,705" ng-click="backToMain()">
+        </div>
+
+        <div ng-if = 'isNews()'>
+            <area shape="rect" coords="50,154,99,210" ng-click="backToMain()">
+            <area shape="rect" coords="48,218,396,766" ng-click="crimeNews()">
+        </div>
+
+        <div ng-if = 'isCrimeNews()'>
+            <area shape="rect" coords="44,158,100,213" ng-click="backToMain()">
+        </div>
+
+        <div ng-if = 'isMap()'>
+            <area shape="rect" coords="200,100,108,160" ng-click="backToMain()">
+        </div>
+
+        <div ng-if = 'isCp()'>
+            <area shape="rect" coords="44,153,100,207" ng-click="backToMain()">
+        </div>
+
+        <div ng-if = 'isFollowMe()'>
+            <area shape="rect" coords="344,159,390,200" ng-click="backToMain()">
+        </div>
+
+        <div ng-if = 'isSettings()'>
+            <area shape="rect" coords="20,100,112,164" ng-click="backToMain()">
+            <area shape="rect" coords="201,698,266,735" ng-click="backToLogIn()">
+        </div>
+
+    </map>
+</div>
+
+<!-- Modules -->
+<script src="../js/app.js"></script>
+
+<!-- Controllers -->
+<script src="../js/controllers/mainController.js"></script>
+</body>
+</html>
